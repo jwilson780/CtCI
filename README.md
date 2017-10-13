@@ -4,11 +4,11 @@
 
 The directory structure will be as follows:
 
-### Chapter x
-#### Jakes Solutions
+### Chapter x: Topic
+#### Jake's Solutions
 ##### chapterXJake.language
 language file will contain solutions as methods or functions
-#### Stevens Solutions
+#### Steven's Solutions
 ##### chapterXJake.language
 language file will contain solutions as methods or functions
 
