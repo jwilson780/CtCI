@@ -4,7 +4,7 @@
 
 The directory structure will be as follows:
 
-### Chapter x: Topic
+### Chapter x : Topic
 #### Jake's Solutions
 ##### chapterXJake.language
 language file will contain solutions as methods or functions
