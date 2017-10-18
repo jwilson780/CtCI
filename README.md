@@ -4,13 +4,12 @@
 
 The directory structure will be as follows:
 
-### Chapter x Topic
-#### Jake's Solutions
-##### chapterXJake.language
-language file will contain solutions as methods or functions
-#### Steven's Solutions
-##### chapterXJake.language
-language file will contain solutions as methods or functions
+## Chapter x Topic
+### ProblemX.language
+Each problem gets its own language file.
+
+## Data Structures
+This directory will house all data structures needed to complete the problems.
 
 ## Special Topics
 Special topics will be covered in their own directory within the Special Topics directory.  Special Topics will most likely include Threads, Garbage Collection, and any other advanced topic that requires notes or explanation.
