@@ -41,18 +41,24 @@
        brute force is to create all possible permutations of both then compare till you hit a match
        you really don't have to do that.  You can just see if all chars of the smaller string
        (if they are equal then the first string) exist in the other string.*/
+       StringBuilder aSB = new StringBuilder(a);
+       StringBuilder bSB = new StringBuilder(b);
 
        if(a.length < b.length){//b is bigger
          for(int i = 0; i < a.length; ++i){
            if(!b.contains(a.charAt(i))){
              return false;
            }
+            //overwrite char in a with * to avoid duplicate issues
+            aSB.setCharAt(i, '*');
          }
        }else{//same length or a is larger
          for(int i = 0; i < b.length; ++i){
            if(!a.contains(b.charAt(i))){
              return false;
            }
+           //overwrite char in b with * to avoid duplicate issues
+           bSB.setCharAt(i, '*');
          }
        }
 
