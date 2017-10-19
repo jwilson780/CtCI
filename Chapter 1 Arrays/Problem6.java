@@ -7,7 +7,12 @@ public class Problem6{
    *
    */
     public static void main(String[] args){
-
+      Problem6 p6 = new Problem6();
+      System.out.println(p6.problemSix("aaaa"));
+      System.out.println(p6.problemSix("aaaabbb"));
+      System.out.println(p6.problemSix("aabaa"));
+      System.out.println(p6.problemSix("aaaabbbbbbaaaabbbbbabababababa"));
+      System.out.println(p6.problemSix("a"));
     }
     /**
      * Problem 6: compress a string with repeated letters, if the string that is
@@ -19,11 +24,16 @@ public class Problem6{
       int start = 0; //keep track of start of run
       for(int i = 0; i < compressionArray.length; ++i){
         //just need to make sure one we are is the same as the previous (2 pointers)
-        if(compressionArray[i] != compressionArray[start]){//change of char in array
+        if(compressionArray[i] != compressionArray[start] || i == compressionArray.length-1){//change of char in array
           //add char to string builder
-          compressed.append(compressionArray[start].toString());
+          compressed.append(compressionArray[start]);
           //add length of run to string builder
-          compressed.append(i - start + "");
+          if(i == compressionArray.length-1){
+            compressed.append(i + 1 - start + "");
+          }else{
+            compressed.append(i - start + "");
+          }
+
           //set start to i for new run
           start = i;
         }
@@ -31,7 +41,7 @@ public class Problem6{
       }
 
       //check to see if compressed is longer than uncompressed
-      if(toBeCompressed.length < compressed.length){
+      if(toBeCompressed.length() < compressed.length()){
         return toBeCompressed;
       }else{
         return compressed.toString();
