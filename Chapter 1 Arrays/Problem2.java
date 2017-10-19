@@ -2,12 +2,21 @@
 
 public class Problem2{
 
+  public Problem2(){
+    //dummy constructor
+  }
+
   /**
    * used to run and test the problem
    *
    */
     public static void main(String[] args){
-
+      Problem2 p2 = new Problem2();
+      System.out.println(p2.problemTwo("asd","dsa"));
+      System.out.println(p2.problemTwo("asd","asda"));
+      System.out.println(p2.problemTwo("asdc","asd"));
+      System.out.println(p2.problemTwo("asdaa","asdbcsd"));//check to see if we are deleting chars from bigger
+      System.out.println(p2.problemTwo("asdhdhd","asdaa"));
     }
     /**
     * Given two strings, see if one is a permutation of other
@@ -22,21 +31,21 @@ public class Problem2{
         StringBuilder aSB = new StringBuilder(a);
         StringBuilder bSB = new StringBuilder(b);
 
-        if(a.length < b.length){//b is bigger
-          for(int i = 0; i < a.length; ++i){
-            if(!b.contains(aSB.charAt(i))){
+        if(a.length() < b.length()){//b is bigger
+          for(int i = 0; i < a.length(); ++i){
+            if((bSB.toString().indexOf(a.charAt(i))) == -1){
               return false;
             }
-             //overwrite char in a with * to avoid duplicate issues
-             aSB.setCharAt(i, '*');
+             //overwrite char in b with * to avoid duplicate issues
+             bSB.setCharAt((a.indexOf(a.charAt(i))), '*');
           }
         }else{//same length or a is larger
-          for(int i = 0; i < b.length; ++i){
-            if(!a.contains(bSB.charAt(i))){
+          for(int i = 0; i < b.length(); ++i){
+            if((aSB.toString().indexOf(b.charAt(i))) == -1){
               return false;
             }
-            //overwrite char in b with * to avoid duplicate issues
-            bSB.setCharAt(i, '*');
+            //overwrite char in a with * to avoid duplicate issues
+            aSB.setCharAt(aSB.toString().indexOf(b.charAt(i)), '*');
           }
         }
 
