@@ -1,12 +1,19 @@
+import java.util.ArrayList;
 
-
-public class Problem8{
+public class Chapter1Problem8{
 
     /**
      * used to run and test the problem
      *
      */
     public static void main(String[] args){
+      Chapter1Problem8 p8 = new Chapter1Problem8();
+      int[][] test1 = {{1,2,3},{1,0,3},{1,2,3}};//single zero
+      int[][] test2 = {{0,2,3},{1,0,3},{1,2,3}};//2 zeros
+      int[][] test3 = {{0,0,3},{1,0,3},{1,0,0}};//many zeros
+      System.out.println(p8.print2dArray(p8.problemEight(test1)));
+      System.out.println(p8.print2dArray(p8.problemEight(test2)));
+      System.out.println(p8.print2dArray(p8.problemEight(test3)));
 
     }
 
@@ -22,8 +29,8 @@ public class Problem8{
        for(int i = 0; i < inputMatrix.length; ++i){
          for(int j = 0; j < inputMatrix[0].length; ++j){//if array row length differs this is wrong (it doesn't in this problem)
            if(inputMatrix[i][j] == 0){
-             rowsToBeZeroed.append(i);
-             columnsToBeZeroed.append(j);
+             rowsToBeZeroed.add(i);
+             columnsToBeZeroed.add(j);
            }
          }
        }
@@ -44,6 +51,16 @@ public class Problem8{
        }
        //return the modified array
        return inputMatrix;
+     }
+
+     public String print2dArray(int[][] arrayToPrint){
+       StringBuilder sb = new StringBuilder();
+       for(int i = 0; i < arrayToPrint.length; i++){
+         for(int j = 0; j < arrayToPrint[0].length; ++j){
+           sb.append(arrayToPrint[i][j]);
+         }
+         sb.append("\n");
+       }
      }
 
 }

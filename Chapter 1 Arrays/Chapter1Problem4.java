@@ -1,13 +1,13 @@
 import java.util.HashMap;
 import java.util.ArrayList;
 
-public class Problem4{
+public class Chapter1Problem4{
   /**
    * used to run and test the problem
    *
    */
     public static void main(String[] args){
-      Problem4 p4 = new Problem4();
+      Chapter1Problem4 p4 = new Chapter1Problem4();
       System.out.println(p4.problemFourBetter("aaa dsa"));
       System.out.println(p4.problemFourBetter("aadd sa"));
       System.out.println(p4.problemFourBetter("aa da"));

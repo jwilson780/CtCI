@@ -1,8 +1,8 @@
 
 
-public class Problem2{
+public class Chapter1Problem2{
 
-  public Problem2(){
+  public Chapter1Problem2(){
     //dummy constructor
   }
 
@@ -11,7 +11,7 @@ public class Problem2{
    *
    */
     public static void main(String[] args){
-      Problem2 p2 = new Problem2();
+      Chapter1Problem2 p2 = new Chapter1Problem2();
       System.out.println(p2.problemTwo("asd","dsa"));
       System.out.println(p2.problemTwo("asd","asda"));
       System.out.println(p2.problemTwo("asdc","asd"));

@@ -1,13 +1,13 @@
 
 
-public class Problem6{
+public class Chapter1Problem6{
 
   /**
    * used to run and test the problem
    *
    */
     public static void main(String[] args){
-      Problem6 p6 = new Problem6();
+      Chapter1Problem6 p6 = new Chapter1Problem6();
       System.out.println(p6.problemSix("aaaa"));
       System.out.println(p6.problemSix("aaaabbb"));
       System.out.println(p6.problemSix("aabaa"));
