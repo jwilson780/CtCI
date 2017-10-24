@@ -9,7 +9,7 @@ public class Chapter3Problem6{
       }
 
       /**
-      *
+      * Animal shelter problem, class is implemented in this folder
       */
       public boolean problemSix(String a, String b){
 

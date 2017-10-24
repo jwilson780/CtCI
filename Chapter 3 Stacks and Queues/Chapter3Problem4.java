@@ -10,10 +10,12 @@ public class Chapter3Problem4{
     }
 
     /**
-    *
+    * Implement a queue class that uses 2 normal stacks to replicate queue behavior
     */
     public boolean problemFour(String a, String b){
-
+      /*
+      I made the class in this folder
+      */
     }
 
 }

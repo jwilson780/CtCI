@@ -5,8 +5,8 @@
 The directory structure will be as follows:
 
 ## Chapter x Topic
-### ProblemX.language
-Each problem gets its own language file.
+### ChapterXProblemX.language
+Each problem gets its own language file.  Some problems may require a separate directory.
 
 ## Data Structures
 This directory will house all data structures needed to complete the problems.
