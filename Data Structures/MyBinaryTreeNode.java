@@ -13,7 +13,7 @@ public class MyBinaryTreeNode implements Comparable <MyBinaryTreeNode> {
     public MyBinaryTreeNode left;
     public MyBinaryTreeNode right;
     /**
-     * Constructor for MyBinaryTreeNode 
+     * Constructor for MyBinaryTreeNode
      * @param d: data associated with the node
      */
     public MyBinaryTreeNode(Object d)
@@ -23,7 +23,7 @@ public class MyBinaryTreeNode implements Comparable <MyBinaryTreeNode> {
         right = null;
     }
     /**
-     * Constructor for MyBinaryTreeNode 
+     * Constructor for MyBinaryTreeNode
      * @param d: data associated with the node
      * @param l: left child reference
      * @param r: right child reference
