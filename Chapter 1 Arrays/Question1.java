@@ -55,6 +55,10 @@ public class Question1{
 		return true;
 	}
 
+	/**
+	* Need to use a Supplier because streams cannot be used after 
+	* they've been used or operated on 
+	*/
 	public static boolean isUniqueFunctional(String str){
 		Supplier<IntStream> letterStreamSupplier = () -> str.chars();
 		return letterStreamSupplier.get()
