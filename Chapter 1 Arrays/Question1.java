@@ -1,14 +1,28 @@
 import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.*;
+import java.util.function.Supplier;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
+import static java.util.stream.Collectors.counting;
+import java.util.stream.Collectors;
+import java.util.function.Predicate;
+
 public class Question1{
 	public static void main(String[] args){
 		System.out.println(isUniqueOne("asdbefrk"));
 		System.out.println(isUniqueTwo("asdbefrk"));
+		System.out.println(isUniqueFunctional("asdbefrk"));
 		System.out.println(isUniqueOne("asdbefrka"));
 		System.out.println(isUniqueTwo("asdbefrka"));
+		System.out.println(isUniqueFunctional("asdbefrka"));
 		System.out.println(isUniqueOne("adsdbefrk"));
 		System.out.println(isUniqueTwo("adsdbefrk"));
+		System.out.println(isUniqueFunctional("adsdbefrk"));
 		System.out.println(isUniqueOne("adsbefrkk"));
 		System.out.println(isUniqueTwo("adsbefrkk"));
+		System.out.println(isUniqueFunctional("adsbefrkk"));
 	}
 
 	/**
@@ -39,5 +53,15 @@ public class Question1{
 			}
 		}
 		return true;
+	}
+
+	public static boolean isUniqueFunctional(String str){
+		Supplier<IntStream> letterStreamSupplier = () -> str.chars();
+		return letterStreamSupplier.get()
+					.distinct()
+					.count()
+					==
+					letterStreamSupplier.get()
+					.count();
 	}
 }
