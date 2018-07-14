@@ -1,4 +1,7 @@
 import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.stream.*;
+
 public class Question1{
 	public static void main(String[] args){
 		BasicSLList list = new BasicSLList();
@@ -14,6 +17,7 @@ public class Question1{
 		System.out.println(list);
 		removeDuplicatesOne(list);
 		System.out.println(list);
+
 		BasicSLList list2 = new BasicSLList();
 		list2.append("This");
 		list2.append("This");
@@ -27,6 +31,20 @@ public class Question1{
 		System.out.println(list2);
 		removeDuplicatesTwo(list2);
 		System.out.println(list2);
+
+		ArrayList<String> list3 = new ArrayList<String>();
+		list3.add("This");
+		list3.add("This");
+		list3.add("is");
+		list3.add("a");
+		list3.add("list");
+		list3.add("to");
+		list3.add("search");
+		list3.add("a");
+		list3.add("to");
+		System.out.println(list3);
+		list3 = removeDuplicatesFunctional(list3);
+		System.out.println(list3);
 	}
 
 	/**
@@ -62,6 +80,12 @@ public class Question1{
 			}
 			pointerA=pointerA.next;
 		}
+	}
+
+	public static ArrayList<String> removeDuplicatesFunctional(ArrayList<String> list){
+		return list.stream()
+			.distinct()
+			.collect(Collectors.toCollection(ArrayList::new));
 	}
 }
 
