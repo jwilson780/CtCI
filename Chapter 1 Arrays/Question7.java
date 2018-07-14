@@ -6,7 +6,7 @@ public class Question7{
 		print2dMatrix(rotate90DegreesOne(a));
 		print2dMatrix(b);
 		print2dMatrix(rotate90DegreesOne(b));
-		a = bew int[][]{{1,2,3},{4,5,6},{7,8,9}};
+		a = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
 		b = new int[][]{{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15},{16,17,18,19,20},{21,22,23,24,25}};
 		print2dMatrix(a);
 		print2dMatrix(rotate90DegreesTwo(a));
