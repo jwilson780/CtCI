@@ -1,4 +1,10 @@
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.stream.*;
+import java.util.stream.IntStream;
+import java.util.Spliterator;
+import java.util.Spliterators;
+import java.util.Arrays;
 public class Question5{
 	public static void main(String[] args){
 		BasicSLList list1 = new BasicSLList();
@@ -14,6 +20,17 @@ public class Question5{
 		System.out.println(addReverseOne(list1,list2));
 		System.out.println(addReverseTwo(list1,list2));
 		System.out.println(addRegularOne(list1,list2));
+
+		LinkedList<Integer> l1=new LinkedList<>();
+		l1.add(7);
+		l1.add(1);
+		l1.add(6);
+		LinkedList<Integer> l2=new LinkedList<>();
+		l2.add(5);
+		l2.add(9);
+		l2.add(2);
+		System.out.println(addReverseFunctional(l1,l2));
+		System.out.println(addRegularFunctional(l1,l2));
 	}
 
 	/**
@@ -80,6 +97,34 @@ public class Question5{
 	}
 
 	/**
+	* This is a bit of cheating. I just reverse the Linked List before turning 
+	* it into a stream. IN order to do that, I had to use a spliterator, which
+	* I've read is a bad idea unless you're designing streamable data structures.
+	* The only way I found in the LinkedList class to reverse it was to use
+	* descendingIterator. 
+	* A bit hacky&unreadable, but functional regardless.
+	* There has to be a better functional way.
+	*/
+	public static LinkedList<Integer> addReverseFunctional(LinkedList<Integer> l1,
+												LinkedList<Integer> l2){
+		int num1 = Integer.parseInt(
+			StreamSupport.stream(Spliterators.spliteratorUnknownSize(l1.descendingIterator(),
+																	Spliterator.ORDERED),false)
+					.map(val -> ""+val)
+					.collect(Collectors.joining()));
+		int num2 = Integer.parseInt(
+			StreamSupport.stream(Spliterators.spliteratorUnknownSize(l2.descendingIterator(),
+																	Spliterator.ORDERED),false)
+					.map(val -> ""+val)
+					.collect(Collectors.joining()));
+		int sum = num1+num2;
+		Integer[] digits = Integer.toString(sum).chars()
+					.mapToObj(c->new Integer(Integer.parseInt(""+(c-'0'))))
+					.toArray(Integer[]::new);
+		return new LinkedList<Integer>(Arrays.asList(digits));
+	}
+
+	/**
 	* O(n) time,O(n) space
 	*/
 	public static BasicSLList addRegularOne(BasicSLList list1, BasicSLList list2){
@@ -110,6 +155,28 @@ public class Question5{
 			powerChecker/=10;
 		}
 		return sumList;
+	}	
+
+	/**
+	* First have to convert lists to a stream of characters, 
+	* then a string, then parse to int, then sum, then to
+	* a stream, then an array, then finally back to a list
+	* A bit hacky&unreadable, but functional regardless.
+	* There has to be a better functional way.
+	*/
+	public static LinkedList<Integer> addRegularFunctional(LinkedList<Integer> l1,
+												LinkedList<Integer> l2){
+		int num1 = Integer.parseInt(l1.stream()
+										.map(val -> ""+val)
+										.collect(Collectors.joining()));
+		int num2 = Integer.parseInt(l2.stream()
+										.map(val -> ""+val)
+										.collect(Collectors.joining()));
+		int sum = num1+num2;
+		Integer[] digits = Integer.toString(sum).chars()
+					.mapToObj(c->new Integer(Integer.parseInt(""+(c-'0'))))
+					.toArray(Integer[]::new);
+		return new LinkedList<Integer>(Arrays.asList(digits));
 	}
 }
 
