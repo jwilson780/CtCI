@@ -2,7 +2,7 @@
 
 Given a string s, find and return the first instance of a non-repeating character in it. If there is no such character, return '_'.
 
-##Example
+## Example
 
     For s = "abacabad", the output should be
     firstNotRepeatingCharacter(s) = 'c'.
@@ -14,7 +14,7 @@ Given a string s, find and return the first instance of a non-repeating characte
 
     There are no characters in this string that do not repeat.
 
-##Input/Output
+## Input/Output
 
     execution time limit 3 seconds (java)
 
