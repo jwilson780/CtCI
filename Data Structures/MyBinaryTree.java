@@ -65,7 +65,7 @@ public abstract class MyBinaryTree {
 //        System.out.println();
 //    }
 //    /**
-//     * Recursive helper method which contains the logic for the 
+//     * Recursive helper method which contains the logic for the
 //     * preorderTraversal method
 //     * @param rt: current root node
 //     */
@@ -76,7 +76,7 @@ public abstract class MyBinaryTree {
 //        preorder(rt.left);
 //        preorder(rt.right);
 //    }
-    
+
     /**
      * Method that prints a preorder traversal of a binary expression tree
      */
@@ -89,19 +89,21 @@ public abstract class MyBinaryTree {
         return str;
     }
     /**
-     * Recursive helper method which contains the logic for the 
+     * Recursive helper method which contains the logic for the
      * preorderTraversal method
      * @param rt: current root node
      */
     private void preorder(MyBinaryTreeNode rt)
     {
-        if(rt==null)return;
-        preorder += "\t"+rt.data;
+        if(rt == null){
+          return;
+        }
+        System.out.print("\t" + rt.data);
         preorder(rt.left);
         preorder(rt.right);
     }
-    
-    
+
+
     /**
      * Method that prints a inorder traversal of a binary search tree
      */
@@ -112,7 +114,7 @@ public abstract class MyBinaryTree {
         System.out.println();
     }
     /**
-     * Recursive helper method which contains the logic for the 
+     * Recursive helper method which contains the logic for the
      * inorderTraversal method
      * @param rt: current root node
      */
@@ -133,7 +135,7 @@ public abstract class MyBinaryTree {
         System.out.println();
     }
     /**
-     * Recursive helper method which contains the logic for the 
+     * Recursive helper method which contains the logic for the
      * postorderTraversal method
      * @param rt: current root node
      */
